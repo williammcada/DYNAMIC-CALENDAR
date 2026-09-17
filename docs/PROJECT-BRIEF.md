@@ -1,100 +1,81 @@
 # Project Brief — Dynamic Calendar
 
-**Brief status:** Migration baseline / requires source verification where noted  
-**Brief version:** 0.1  
-**Last updated:** 18 September 2026  
-**Owner:** William McAda  
-**Product credit:** A WILLIAM MCADA PRODUCT  
-**Handbook repository:** `williammcada/mcada-project-handbook`  
-**Handbook baseline:** `6557a45aaa6d29d7d1abde808e6d0ac248b08820 (AI-START-HERE.md); UNIVERSAL-RULES.md @ aed6fe311aa2e88983f862a30a2d8f05d2ffc04d`  
-**Repository:** `williammcada/Dynamic-Calendar`  
-**Canonical source status:** Known migration candidate: standalone `Dynamic_Lesson_Calendar_v1.html`; verify the exact latest local file before committing it as canonical.  
-**Current project state:** v1 standalone/offline HTML application with local scheduling, editing, backup/export, and print/PDF capabilities.
+**Brief version:** 0.2 — audited documentation revision  
+**Owner:** William McAda · **Credit:** A WILLIAM MCADA PRODUCT  
+**Status:** Revised record for owner review; not an application release or fresh feature approval.  
+**Repository destination:** williammcada/Dynamic-Calendar (verify existence/current branch before source edits).  
+**Current running version:** Not independently verified in this documentation task.  
+**Source/baseline:** Recorded candidate Dynamic_Lesson_Calendar_v1.html; verify latest local copy/version.  
+**Next work:** Commit current working standalone source; preserve schedule/edit/export behavior.
 
-## 1. Purpose and audience
+## 1. Purpose, audience and detailed scope
 
-Dynamic Calendar is an offline, standalone HTML replacement for a fragile Excel lesson schedule, designed to generate and maintain a dynamic teaching calendar while preserving local control of the schedule.
+- Standalone offline teacher lesson-calendar utility replacing fragile spreadsheet scheduling. Editable lesson sequence, dates and events with automatic valid-school-day scheduling.
+- Keep Holidays and No-Lesson Days distinct. Both categories need bulk import and Remove all; built-in 2026–27 dates can remain Holidays. Skipped days must render normally.
+- Retain local autosave, JSON backup/restore, CSV export and print/PDF without cloud accounts.
+- Teaching-context records include lessons, tests, study-guide releases, investigations, special activities, closures and benchmarks. FLEX days buffer disruption (SOP recommendation three/month).
+- Treat the SOP's lesson-shift/assessment-cadence policy as a workflow requirement to reconcile with source, not proof the app already implements it. Define which dates remain anchored and which events move before changing scheduler behavior.
+- Next-month publishing to Teams is a manual teacher workflow; no Teams integration is implied.
 
-**Primary audience / operator:** Teacher/educator maintaining a lesson sequence and calendar.
+## 2. This task and boundaries
 
-## 2. Standards selection
+This revision repairs documentation only. It does not implement features, run application tests, upload source, deploy a site, or alter a repository. Retain the exact current source before implementation. Historical reported functionality is a preservation checklist to reconcile against that source, not permission to recreate the program from prose.
 
-**Universal baseline:** U-01 through U-08 where applicable.
+## 3. Standards and adoption
 
-**Conditional modules:** S-04 Distribution/Deployment
+[Canonical handbook](https://github.com/williammcada/mcada-project-handbook). File blob revisions consulted: AI-START-HERE.md 6557a45aaa6d29d7d1abde808e6d0ac248b08820; UNIVERSAL-RULES.md aed6fe311aa2e88983f862a30a2d8f05d2ffc04d; CONDITIONAL-STANDARDS.md dad2d3a05ca0f18260196ea51ac6351bffffdc1c; PROJECT-TEMPLATE.md 574f4c6fcf19ecc2f9e27582fd856fb08123e8da. These are file blobs, not repository commit SHAs.
 
-Apply only the selected modules and project-local requirements. Do not import restrictions from unrelated projects.
+Relevant rules: U-01 identity, U-02 help, U-03 input validation, U-04 unambiguous math/text where applicable, U-05 reader/device, U-06 preservation, U-07 verification, U-08 local scope. Conditional selection: S-04.
+Baseline adoption: selected for this documentation task within existing user instructions. Handbook still labels shared scope/modules seeded/draft; no new global rule ratification is inferred. Project-specific approved decisions control their own scope.
 
-## 3. Project-specific requirements
+## 4. Must-retain behavior
 
-- Run as a standalone offline HTML application.
-- Keep HOLIDAYS and NO-LESSON DAYS as distinct concepts.
-- Built-in 2026–27 dates may remain as Holidays.
-- Both Holidays and No-Lesson Days need bulk import and Remove all controls.
-- Support editable lesson sequence, dates, and events.
-- Use local autosave; do not require a cloud account.
-- Support JSON backup/restore, CSV export, and print/PDF.
-- Skipped days should look normal rather than visually broken.
+The detailed scope above is the feature-preservation inventory. Preserve existing settings, data, accepted content, assets, exports and compatibility confirmed in source. Distinguish implemented behavior, accepted pending changes and historical requests during intake. A missing entry in this brief is not authorization to remove working behavior. Preserve valid user work during migrations and failures.
 
-## 4. Preserve from the current accepted project
+## 5. Source, release and deployment discipline
 
-- JavaScript lesson scheduling behavior.
-- Editable sequence/dates/events.
-- Local autosave.
-- JSON backup/restore.
-- CSV export.
-- Print/PDF output.
-- Distinct Holidays and No-Lesson Days handling.
+Recorded candidate Dynamic_Lesson_Calendar_v1.html; verify latest local copy/version.
 
-## 5. Relationship to other projects
+Record exact selected source filename/hash and repository commit when importing it; record live URL/version only after actually opening it. Unknown commit does not mean the product is unbuilt.
 
-- Standalone teacher utility; not an assessment engine or student game.
-- Do not import classroom-game or AAC restrictions into this project.
+DESIGN → CHANGE SPEC → IMPLEMENT → CHECKPOINT → VERIFY → VERIFIED CHECKPOINT → RELEASE → DEPLOY.
 
-A conceptual relationship is not proof of an implemented integration. Do not invent a shared API, data schema, identity layer, or deployment dependency without an explicit integration task.
+Use “implementation checkpoint” or “release candidate” before verification. Preserve candidate bytes and logs before packaging; recover that checkpoint after a ZIP/upload failure. Do not rebuild a verified implementation to fix delivery. Repository upload and website deployment are different operations; existing automatic deployments may run when main changes.
 
-## 6. Source and version discipline
+## 6. Known issues, conflicts and open evidence
 
-The exact current source artifact or repository commit must be identified before a substantive build. If the field above says the source is not yet established, first locate the latest known-good local file/ZIP or existing repository state and record its exact identity here.
+Exact scheduling semantics and browser/file-storage behavior require checks. SOP policy must not be silently promoted to implemented feature.
 
-For substantial revisions use:
+| Conflict or risk | Required handling |
+| --- | --- |
+| Historical claim versus current source | Inspect exact source; keep historical claim labeled until verified. |
+| Proposed next scope versus working baseline | Use the approved version-specific specification; do not silently promote proposals. |
+| Other project rules | Do not import AAC quotas, other-game retry counts, or a shared backend without explicit scope. |
+| Handbook proposals | No additional exception or proposal is adopted by this brief. |
 
-**DESIGN → CHANGE SPEC → IMPLEMENT → CHECKPOINT → VERIFY → VERIFIED CHECKPOINT → RELEASE → DEPLOY (when applicable)**
+## 7. Verification contract
 
-A packaging/export/deployment failure must not force reconstruction of an already verified build.
+Use a small known calendar crossing weekends, holidays and no-lesson days; edit sequence; verify anchored versus shifted events, bulk clearing, reload/restore and identical CSV/print dates.
 
-## 7. Definition of done
+| Evidence required | Result in this task |
+| --- | --- |
+| Exact source candidate/commit identified and preserved | Not run — documentation revision only |
+| Project-specific checks above, with inputs and expected/actual results | Not run |
+| Save/import/export and malformed-input regression | Not run |
+| Intended devices and real deployment path, where applicable | Not run |
+| Version, release notes and delivered bytes agree | Not run |
 
-| # | Requirement / check | Result | Evidence / limitation |
-| ---: | --- | --- | --- |
-| 1 | Calendar generation produces the expected lesson/date sequence. | Not run | |
-| 2 | Holiday and No-Lesson Day logic remain distinct. | Not run | |
-| 3 | Bulk import and Remove all work for both date categories. | Not run | |
-| 4 | Local autosave and JSON restore reproduce the schedule. | Not run | |
-| 5 | CSV and print/PDF outputs match the current calendar. | Not run | |
-| 6 | Offline operation works without required network calls. | Not run | |
+The next build report must name the candidate, environment and test results; historical reports of passing tests do not transfer to a changed candidate.
 
-Allowed results: **Passed / Failed / Not run / Not applicable**. A "Passed" result requires an actual check against the identified candidate.
+## 8. Handoff and provenance
 
-## 8. Known issues and migration notes
+Required project records: Dynamic_Lesson_Calendar_v1.html; anonymized schedule backup; relevant SOP scheduling section.
 
-Because this is a local standalone tool, do not accidentally add hosting or account dependencies during migration.
+Provenance: previous migration brief and project-history audit in this conversation; directly read dossier/proposal where explicitly stated above. Records not explicitly marked read here are retrieval targets, not claims of fresh inspection. No current app code was tested for this brief.
 
-## 9. Handoff files
+Before substantive implementation retrieve these records, the current source, approved change spec and applicable handbook. If an indispensable spec is inaccessible, report the gap instead of filling it with invented details. Do not delete unique historical chats/assets until their contents are independently preserved.
 
-A substantive AI implementation task should retrieve or receive:
+## 9. Ecosystem boundary
 
-1. `AI-START-HERE.md`;
-2. `UNIVERSAL-RULES.md`;
-3. the relevant sections of `CONDITIONAL-STANDARDS.md`;
-4. this project brief;
-5. the exact current source artifact/commit;
-6. the approved version-specific change specification;
-7. applicable assets and deployment configuration.
+Shared principles do not establish shared code, accounts or interfaces. MathQuest is engagement, TestForge assessment design, GradePal learner-level evidence, and DataDiver institutional analytics. Integration remains separately specified unless confirmed in source. Other projects remain independent unless their brief explicitly says otherwise.
 
-Do not reconstruct the current implementation from a historical chat summary when the actual source should be available.
-
-## 10. Ownership
-
-**William McAda**  
-**A WILLIAM MCADA PRODUCT**

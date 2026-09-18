@@ -1,20 +1,16 @@
 # Migration Note — Dynamic Calendar
 
-**Prepared:** 18 September 2026
+**Prepared:** 18 September 2026  
+**Status:** Historical migration note; source-status section superseded on 18 September 2026.
 
-This file records the initial move from chat-centered project history toward a repository-centered canonical record.
+The canonical source identity is now recorded in [`MIGRATION-BASELINE.md`](MIGRATION-BASELINE.md). Earlier statements that the source, filename, version or repository checkpoint was “TO ESTABLISH” are no longer current.
 
-## Source status at migration
+## Resolved source status
 
-Known migration candidate: standalone `Dynamic_Lesson_Calendar_v1.html`; verify the exact latest local file before committing it as canonical.
+Canonical preserved source: `Dynamic_Lesson_Calendar_v2.html`, Git blob `8904076ced6734f0dbd2d0d8685afd94b0f82b62`, at source checkpoint `cf7ee7a3c2f9019f7600a1783330cbe7a8808947`.
 
-## What to do next
+## Remaining work
 
-1. Identify the exact latest known-good source artifact.
-2. Place/confirm it in this repository.
-3. Update `PROJECT-BRIEF.md` with the exact version/commit.
-4. Copy any unique approved historical specification that is still needed into `docs/change-specs/`.
-5. Verify the repository source can be opened/built/deployed as appropriate.
-6. Only after unique project state is safely preserved should historical monster chats be treated as disposable.
+Use the committed v2 source as the canonical baseline and verify scheduling, local persistence, backup/restore, CSV and print behavior before further revision.
 
-This migration note is not a release specification and does not authorize new features.
+This note is not a release specification and does not authorize new features. Functional, device and deployment verification remain separate from source preservation.
